@@ -12,6 +12,9 @@ public class Diamond {
   //  Print a diamond based on dimensions entered by the user
   // ---------------------------------------------------------------------------
   public static void main(String[] args) {
+    //Declare and Initialize variables
+    string repeatedCharacter;
+
     //Create new objects
     Scanner input = new Scanner(System.in);
 
@@ -23,9 +26,9 @@ public class Diamond {
     System.out.println("Enter a width/height for the diamond: ");
     final int DIAMOND_SIZE = input.nextInt();
 
-    //Generate and print diamond
+    //Generate and print diamond layers
     for(int i = 1; i <= DIAMOND_SIZE; i++) {
-
+      System.out.println(repeatedCharacter);
     }
 
     //Prevent resource leak
