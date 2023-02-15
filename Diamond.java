@@ -16,7 +16,11 @@ public class Diamond {
     int diamondSize;
 
     //Create new objects
-    Scanner scan = new Scanner(System.in);
+    Scanner input = new Scanner(System.in);
 
+
+
+    //Prevent resource leak
+    scan.close();
   }
 }
