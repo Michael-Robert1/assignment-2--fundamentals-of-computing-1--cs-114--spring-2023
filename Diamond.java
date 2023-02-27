@@ -29,16 +29,22 @@ public class Diamond {
       //Run this code if the width for the diamond is odd
 
       //Generate and print diamond layers for top half of diamond
-      int row = 0;
-      for( ; row < (DIAMOND_SIZE-1)/2; row++) {
+      int row = 0;  //Row number starts at 0
+      /*The number of rows in the top half of the diamond is equal to half the
+        size minus 1*/
+      for( ; row < ((DIAMOND_SIZE-1)/2); row++) {
 
-        //Print the spaces
-        for(int i = row; i < (DIAMOND_SIZE-1)/2; i++) {
+        //Print the spaces that precede the stars
+        /*# of spaces before the stars is equal to half the size minus 1 and
+          decreases with each row*/
+        for(int i = 0; i < (((DIAMOND_SIZE-1)/2)-row); i++) {
           System.out.print(" ");
         }
 
         //Print the stars
-        for(int i = 0; i < (row*2)+1; i++) {
+        /*Number of stars on any row is equal to the row number multiplied by
+          two, plus one*/
+        for(int i = 0; i < ((row*2)+1); i++) {
           System.out.print("*");
         }
 
@@ -46,16 +52,21 @@ public class Diamond {
         System.out.println();
       }
 
-      //Generate and print diamond layers for bottom half of diamond
+      //Generate and print diamond layers for middle & bottom half of diamond
+      //Row number decreases with each row on the bottom half
       for( ; row >= 0; row--) {
 
-        //Print the spaces
-        for(int i = row; i < (DIAMOND_SIZE-1)/2; i++) {
+        //Print the spaces that precede the stars
+        /*# of spaces before the stars in the top half is equal to half the
+          width minus 1 and is subtracted by the row number*/
+        for(int i = 0; i < (((DIAMOND_SIZE-1)/2)-row); i++) {
           System.out.print(" ");
         }
 
         //Print the stars
-        for(int i = 0; i < (row*2)+1; i++) {
+        /*Number of stars on any row in the top half is equal to the row number
+          multiplied by two, plus one*/
+        for(int i = 0; i < ((row*2)+1); i++) {
           System.out.print("*");
         }
 
@@ -66,18 +77,30 @@ public class Diamond {
     } else {
       //Run this code if the width for the diamond is even
 
+      //Prints top tip of diamond
+      //On the tip, the spaces before the star equals the size minus 1
+      for(int j = 0; j < ((DIAMOND_SIZE)-1); j++) {
+        System.out.print(" ");
+      }
+      System.out.println("* ");
+
+
       //Generate and print diamond layers for top half of diamond
-      int row = 0;
-      for( ; row < (DIAMOND_SIZE-1); row++) {
+      int row = 1;  //Row number starts at 1
+      //The number of rows in the top half is equal to the size divided by 2
+      for( ; row < (DIAMOND_SIZE/2); row++) {
 
         //Print the spaces
-        for(int j = row; j < (DIAMOND_SIZE-1); j++) {
+        /*The number of spaces before the stars is equal to the size minus double
+        the row number*/
+        for(int j = 0; j < ((DIAMOND_SIZE)-(2*row)); j++) {
           System.out.print(" ");
         }
 
         //Print the stars
-        for(int j = 0; j < (row+1); j++) {
-          System.out.print("* ");
+        //The number of stars on each row is equal to double the row number
+        for(int j = 0; j < ((row*2)); j++) {
+          System.out.print("* ");   //Even diamonds have a space after each star
         }
 
         //Return carriage to print on next line
@@ -85,22 +108,36 @@ public class Diamond {
       }
 
       //Generate and print diamond layers for middle and bottom half of diamond
-      for( ; row >= 0; row--) {
+      //Row number decreases with each row on the bottom half
+      for( ; row > 0; row--) {
 
         //Print the spaces
-        for(int j = row; j < (DIAMOND_SIZE-1); j++) {
+        /*The number of spaces before the stars is equal to the size minus double
+        the row number*/
+        for(int j = 0; j < ((DIAMOND_SIZE)-(2*row)); j++) {
           System.out.print(" ");
         }
 
         //Print the stars
-        for(int j = 0; j < (row+1); j++) {
-          System.out.print("* ");
+        //The number of stars on each row is equal to double the row number
+        for(int j = 0; j < (row*2); j++) {
+          System.out.print("* ");   //Even diamonds have a space after each star
         }
 
         //Return carriage to print on next line
         System.out.println();
       }
+
+      //Prints bottom tip of diamond
+      //On the tip, the spaces before the star equals the size minus 1
+      for(int j = 0; j < ((DIAMOND_SIZE)-1); j++) {
+        System.out.print(" ");
+      }
+      System.out.println("* ");
     }
+
+    //Print a blank line to give space for the program
+    System.out.println();
 
     //Prevent resource leak
     input.close();
