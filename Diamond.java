@@ -91,8 +91,8 @@ public class Diamond {
       for( ; row < (DIAMOND_SIZE/2); row++) {
 
         //Print the spaces
-        /*The number of spaces before the stars is equal to the size minus double
-        the row number*/
+        /*The number of spaces before the stars is equal to the size minus
+        double the row number*/
         for(int j = 0; j < ((DIAMOND_SIZE)-(2*row)); j++) {
           System.out.print(" ");
         }
@@ -112,8 +112,8 @@ public class Diamond {
       for( ; row > 0; row--) {
 
         //Print the spaces
-        /*The number of spaces before the stars is equal to the size minus double
-        the row number*/
+        /*The number of spaces before the stars is equal to the size minus
+        double the row number*/
         for(int j = 0; j < ((DIAMOND_SIZE)-(2*row)); j++) {
           System.out.print(" ");
         }
