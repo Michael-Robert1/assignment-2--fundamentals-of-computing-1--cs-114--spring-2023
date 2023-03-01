@@ -25,7 +25,7 @@ public class Diamond {
 
 
     //Change shape of diamond depending on if DIAMOND_SIZE is even or odd
-    if(DIAMOND_SIZE % 2 == 1) {
+    if((DIAMOND_SIZE%2) == 1) {
       //Run this code if the width for the diamond is odd
 
       //Generate and print diamond layers for top half of diamond
@@ -79,7 +79,7 @@ public class Diamond {
 
       //Prints top tip of diamond
       //On the tip, the spaces before the star equals the size minus 1
-      for(int j = 0; j < ((DIAMOND_SIZE)-1); j++) {
+      for(int j = 0; j < (DIAMOND_SIZE-1); j++) {
         System.out.print(" ");
       }
       System.out.println("* ");
@@ -99,7 +99,7 @@ public class Diamond {
 
         //Print the stars
         //The number of stars on each row is equal to double the row number
-        for(int j = 0; j < ((row*2)); j++) {
+        for(int j = 0; j < (row*2); j++) {
           System.out.print("* ");   //Even diamonds have a space after each star
         }
 
@@ -130,7 +130,7 @@ public class Diamond {
 
       //Prints bottom tip of diamond
       //On the tip, the spaces before the star equals the size minus 1
-      for(int j = 0; j < ((DIAMOND_SIZE)-1); j++) {
+      for(int j = 0; j < (DIAMOND_SIZE-1); j++) {
         System.out.print(" ");
       }
       System.out.println("* ");
